@@ -18,15 +18,15 @@ void setup() {
 }
 
 void draw() {
-  background(255,255,255);
+  background(200,200,200);
   ellipseMode(CENTER);
   ellipse(x, y, s, s);
-  y = y + direction;
+  x = x + direction;
   
   // Determine if it is time to turn around
-  if (y>height-s/2) { // The -s/2 is the edge detector
+  if (x>width-s/2) { // The -s/2 is the edge detector
     direction = -1;
-  } else if (y<0+s/2) { // Edge detector
+  } else if (x<0+s/2) { // Edge detector
     direction = 1;
   }
   
