@@ -1,10 +1,10 @@
 // Simple animation demo
 //
-// Author: Dr. Pineda
-// Date December 5, 2016
+// Author: Dr. Pineda, Edited by Maksut
+// Date December 6, 2016
 
 int x, y; // Coordinates of object
-int s = 25; // Side length of square
+int s = 25; // Side length of Circle
 int direction; // Positive direction = going down; negative direction = going up
 
 void setup() {
@@ -19,14 +19,14 @@ void setup() {
 
 void draw() {
   background(255,255,255);
-  rectMode(CENTER);
-  rect(x, y, s, s);
+  ellipseMode(CENTER);
+  ellipse(x, y, s, s);
   y = y + direction;
   
   // Determine if it is time to turn around
-  if (y>height-s/2) {
+  if (y>height-s/2) { // The -s/2 is the edge detector
     direction = -1;
-  } else if (y<0+s/2) {
+  } else if (y<0+s/2) { // Edge detector
     direction = 1;
   }
   
